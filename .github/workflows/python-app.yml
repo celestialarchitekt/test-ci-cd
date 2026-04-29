@@ -40,4 +40,6 @@ jobs:
         run: uv run black .
 
       - name: Run tests
-        run: uv run pytest -v
+        run: |
+         export PYTHONPATH=$PYTHONPATH:$(pwd)
+         uv run pytest -v
