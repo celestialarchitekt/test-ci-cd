@@ -38,6 +38,9 @@ jobs:
 
       - name: Format check (black)
         run: uv run black  .
+   
+      - name: Set PYTHONPATH
+        run: echo "PYTHONPATH=$PYTHONPATH:$(pwd)" >> $GITHUB_ENV
 
       - name: Run tests
         run: uv run pytest 
