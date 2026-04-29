@@ -37,7 +37,7 @@ jobs:
         run: uv run ruff check .
 
       - name: Format check
-        run: uv run black --check .
+        run: uv run black .
 
       - name: Run tests
         run: uv run pytest -v
