@@ -2,9 +2,9 @@ name: Python CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   test:
@@ -25,15 +25,15 @@ jobs:
         run: pip install uv
 
       - name: Install dependencies
-        run: uv pip install --system -r requirements.txt
+        run: uv pip install -r requirements.txt
 
       - name: Install project
-        run: uv pip install --system -e .
+        run: uv pip install -e .
 
-      - name: Lint
+      - name: Lint (ruff)
         run: uv run ruff check .
 
-      - name: Format check
+      - name: Format check (black)
         run: uv run black  .
 
       - name: Run tests
