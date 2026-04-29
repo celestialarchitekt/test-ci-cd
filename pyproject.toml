@@ -1,6 +1,7 @@
 [project]
 name = "myapp"
 version = "0.1.0"
+requires-python = ">=3.10"
 dependencies = []
 
 [build-system]
@@ -12,3 +13,6 @@ package-dir = {"" = "source"}
 
 [tool.setuptools.packages.find]
 where = ["source"]
+
+[tool.pytest.ini_options]
+pythonpath = ["source"]
